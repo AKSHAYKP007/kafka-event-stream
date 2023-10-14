@@ -10,6 +10,7 @@ value_deserializer=lambda m: json.loads(m.decode('ascii')))
 
 s3 = S3FileSystem()
 
+# write data to s3 bucket(kafka-event-stream)
 for count, i in enumerate(consumer):
     with s3.open("s3://kafka-event-stream/stock_market_{}.json".format(count), 'w') as file:
         print("writing to s3 bucket")
