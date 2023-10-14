@@ -1,0 +1,16 @@
+->locate the pem file associted to ec2 instance in our local computer
+
+->Run the ssh connect command in ec2 instance connect option to connect to ec2
+
+$cd kafka_2.12-3.5.1(locate the kafka folder that is installed in our ec2 to execute the kafka commands)
+
+ replace ip with your ec2 public ip
+$bin/kafka-topics.sh --create --topic quickstart-events --bootstrap-server localhost:9092(to create an event)
+
+# Start the ZooKeeper service
+$ bin/zookeeper-server-start.sh config/zookeeper.properties
+
+# Start the Kafka broker service
+$ bin/kafka-server-start.sh config/server.properties
+
+#start the producer then the consumer by running the python scripts
